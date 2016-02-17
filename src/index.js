@@ -1,9 +1,12 @@
-var $ = require('jquery')
+ var $ = require('jquery')
+var postBlogToServer = require('./postBlog.js')
+
+$(document).ready(function () {
+  $('#newBlog').submit(function (e) {
+    e.preventDefault()
+    postBlogToServer($('#blogInput').val())
+  })
+})
 
 
 
-$(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
-    });
-});
